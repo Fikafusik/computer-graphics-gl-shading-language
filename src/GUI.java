@@ -5,6 +5,8 @@ import com.jogamp.opengl.util.FPSAnimator;
 import javax.swing.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.IOException;
+import java.net.URISyntaxException;
 
 public class GUI extends JFrame {
 
@@ -13,7 +15,7 @@ public class GUI extends JFrame {
     private static final int FRAMES_PER_SECOND = 60;
 
     private final FPSAnimator animator;
-    private final MusicThread musician = new MusicThread("cubic.wav");
+    private MusicThread musician;
 
     public GUI() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -26,6 +28,7 @@ public class GUI extends JFrame {
         shaderCanvas.addGLEventListener(shaderRenderer);
 
         animator = new FPSAnimator(shaderCanvas, FRAMES_PER_SECOND);
+        musician = new MusicThread("resources/sound/cubic.wav");
 
         JLabel labelRoughness = new JLabel("Roughness");
 

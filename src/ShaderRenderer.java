@@ -90,8 +90,8 @@ public class ShaderRenderer implements GLEventListener {
 
 
         try {
-            Texture iceTexture = TextureIO.newTexture(new File("perlin-noise2.jpg"), false);
-            Texture snowTexture = TextureIO.newTexture(new File("texture3.jpg"), false);
+            Texture iceTexture = TextureIO.newTexture(new File("resources/image/perlin-noise2.jpg"), false);
+            Texture snowTexture = TextureIO.newTexture(new File("resources/image/texture3.jpg"), false);
 
             gl.glActiveTexture(GL.GL_TEXTURE0);
             gl.glBindTexture(GL.GL_TEXTURE_2D, iceTexture.getTextureObject());
